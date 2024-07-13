@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Allergies
+from .models import Allergy, FamilyAllergy
 # Register your models here.
 
-admin.site.register(Allergies)
+class AllergyAdmin(admin.ModelAdmin):
+    list_display = ('allergy_id','allergies')
+
+admin.site.register(Allergy,AllergyAdmin)
+admin.site.register(FamilyAllergy)

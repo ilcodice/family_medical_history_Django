@@ -2,8 +2,8 @@ from django.db import models
 from apps.family_members.models import FamilyMember
 # Create your models here.
 
-class Medicaments(models.Model):
-    patient_id = models.ForeignKey(FamilyMember, on_delete=models.CASCADE) # FOREIGN KEY
+class Medicine(models.Model):
+    
     Medicament_id = models.AutoField(primary_key=True) # SERIAL PRIMARY KEY
     medicament = models.CharField(max_length=50)
     for_what = models.TextField()
@@ -17,4 +17,14 @@ class Medicaments(models.Model):
 
 
     def __str__(self):
-        return f"Patient Name: {self.patient_id} - Medicament: {self.medicament}"
+        return f"Medicament: {self.medicament} for what {self.for_what}"
+
+class FamilyMedicine(models.Model):
+    patient_id = models.ForeignKey(FamilyMember, on_delete=models.CASCADE)
+    Medicament_id = models.ForeignKey(Medicine, on_delete=models.CASCADE)
+
+    class Meta():
+        db_table = 'family-m edicine'
+    
+    def __str__(self):
+        return f"FamilyDisease: {self.patient_id} - Medicament_id {self.Medicament_id}"

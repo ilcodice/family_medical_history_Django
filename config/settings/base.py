@@ -17,10 +17,11 @@ DEFAULT_APPS = [
 CUSTOM_APPS = [
     'apps.family_members',
     'apps.allergies',
+    'apps.diseases',
     'apps.medicaments',
     'apps.appointments',
     'apps.operations',
-    'apps.diseases',
+
 
 ]
 

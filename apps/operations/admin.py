@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Operations
+from .models import Operation
 # Register your models here.
 
-admin.site.register(Operations)
+admin.site.register(Operation)

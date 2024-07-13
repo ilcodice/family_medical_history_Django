@@ -1,7 +1,7 @@
 from django.db import models
 from apps.family_members.models import FamilyMember
 # Create your models here.
-class Operations(models.Model):
+class Operation(models.Model):
     patient_id = models.ForeignKey(FamilyMember, on_delete=models.CASCADE)
     operation_id = models.AutoField(primary_key=True)
     operation = models.CharField(max_length=50)
